@@ -1,29 +1,39 @@
 {
-  "inbounds": [
-    {
-      "port": 8080,
-      "listen":"::",
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "f011c012-5f1d-418c-9494-d24d77a9d8f9",
-            "alterId": 520
+	"inbounds": [{
+		"port": "8251",
+		"protocol": "vmess",
+		"settings": {
+			"clients": [ {"id": "c5199b35-3c8d-4106-a3bf-f504820e1183",	"alterId": 16} ]
+		},
+		"streamSettings": {
+			"network": "ws",
+			"security": "auto",
+			"wsSettings": {
+				"path": "/elecV2"
+			}
+		}
+	},{
+	   "port": 443,
+       "protocol": "vless",
+       "settings": {
+            "clients": [
+                    {
+                        "id": "c5199b35-3c8d-4106-a3bf-f504820e1183",
+                        "level": 0
+                    }
+                ],
+                "decryption": "none"
+          },
+          "streamSettings": {
+                "network": "tcp",
+                "security": "auto"
           }
-        ]
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-        "path": "/xiaonuo"
-        }
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "settings": {}
-    }
-  ]
+	}],
+	"outbound": {
+		"protocol": "freedom",
+		"settings": {}
+	},
+	"dns": {
+		"servers": [ "8.8.8.8", "1.1.1.1", "114.114.114.114"]
+	}
 }
