@@ -1,21 +1,13 @@
 {
   "inbounds": [
     {
-      "port": 8899,
-      "protocol": "vmess",
+      "port": 6666,
+      "protocol": "shadowsocks",
       "settings": {
-        "clients": [
-          {
-            "id": "24dcdac4-8042-4ba8-9f0e-2d5c06d65b19",
-            "alterId": 64
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "path": "/okteto"
-        }
+        "method": "aes-128-gcm",
+        "password": "12345678",
+        "ota": false,
+        "network": "tcp,udp"
       }
     }
   ],
