@@ -1,13 +1,22 @@
 {
   "inbounds": [
     {
-      "port": 6666,
-      "protocol": "shadowsocks",
+      "port": 8080,
+      "listen":"0.0.0.0",
+      "protocol": "vmess",
       "settings": {
-        "method": "aes-128-gcm",
-        "password": "12345678",
-        "ota": false,
-        "network": "tcp,udp"
+        "clients": [
+          {
+            "id": "b831381d-6324-4d53-ad4f-8cda48b308aa",
+            "alterId": 64
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+        "path": "/ray"
+        }
       }
     }
   ],
